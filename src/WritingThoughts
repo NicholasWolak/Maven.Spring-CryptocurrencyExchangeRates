@@ -32,3 +32,11 @@ As of right now, I'd like to have a generic domain/repo/services
         -> multiple Cryptos being displayed at once
         -> where to display them? H2? Just Postman?
             -> Find a free online domain and format it with JS?
+
+
+
+    BREAK:
+        Besides having the standard create method inside of service for the DAO(repo)
+            -> I can abstract a bit by running the sampleFetch method in a generic form for the URL finds
+               The respective Crypto then I can parse it's information to add to the database
+               from the domain

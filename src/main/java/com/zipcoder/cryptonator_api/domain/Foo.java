@@ -18,7 +18,7 @@ public class Foo {
     private String target; // value in specific money (usd/cad)
     private Double price; // current price ######.#######
     private Double volume; // 24-hour volume
-    private String markets;
+//    private String markets;
     private Date timeStamp;
     private Boolean success;
     private Error error;
@@ -26,15 +26,18 @@ public class Foo {
     public Foo() {
     }
 
-    public Foo(String base, String target,
-               Double price, Double volume,
-               String markets, Date timeStamp,
-               Boolean success, Error error) {
+    public Foo(String base,
+               String target,
+               Double price,
+               Double volume,
+               Date timeStamp,
+               Boolean success,
+               Error error) {
         this.base = base;
         this.target = target;
         this.price = price;
         this.volume = volume;
-        this.markets = markets;
+//        this.markets = markets;
         this.timeStamp = timeStamp;
         this.success = success;
         this.error = error;
@@ -72,13 +75,13 @@ public class Foo {
         this.volume = volume;
     }
 
-    public String getMarkets() {
-        return markets;
-    }
-
-    public void setMarkets(String markets) {
-        this.markets = markets;
-    }
+//    public String getMarkets() {
+//        return markets;
+//    }
+//
+//    public void setMarkets(String markets) {
+//        this.markets = markets;
+//    }
 
     public Date getTimeStamp() {
         return timeStamp;
