@@ -11,6 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
+
 /**
  * Created by leon on 1/22/18.
  */
@@ -64,5 +66,22 @@ public class FooController {
             @PathVariable String target ) {
         Object result = goodFetch(null, ticker, target);
         return new ResponseEntity<>(service.create((Foo) result), HttpStatus.CREATED);
+    }
+
+    @GetMapping(value = "/read/{ticker}")
+    public ResponseEntity<Foo> readTicker(
+            @PathVariable String ticker) {
+        return new ResponseEntity<>(service.read(ticker), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/read")
+    public ResponseEntity<List<Foo>> readAll() {
+        return new ResponseEntity<>(service.readAll(), HttpStatus.OK);
+    }
+
+    @DeleteMapping(value = "/delete/{ticker}")
+    public ResponseEntity<Foo> delete(
+            @PathVariable String ticker ) {
+        return new ResponseEntity<>(service.delete(ticker), HttpStatus.OK);
     }
 }
