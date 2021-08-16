@@ -1,5 +1,8 @@
 As of right now, I'd like to have a generic domain/repo/services
-    1. Controller is where I'd want to have the ability to search against
+    1. I have an idea on how to implement the actual Cryptonator API but im not sure
+        1a. Further research needed
+
+    2. Controller is where I'd want to have the ability to search against
         "https://www.cryptonator.com/api/currencies" with a user input of a specific TICKER
         ===Each crypto has a specific ticker (as show on the URL above)===
         -- then grab that info and run it against... :
@@ -8,6 +11,8 @@ As of right now, I'd like to have a generic domain/repo/services
                 so I can access their data
             2a. This is a example request for simple info on BTC (bitcoin)
                 -e.g.  https://api.cryptonator.com/api/ticker/btc-usd
+
+
 
             1b. Assuming everything works out to plan, having one domain class with the raw information
                 given on the Cryptonator link provided (https://www.cryptonator.com/api/),
@@ -19,7 +24,7 @@ As of right now, I'd like to have a generic domain/repo/services
                 great formatting
 
 
-    2. Potential blockers BEFORE RESEARCH -> updating every 5 minutes (maybe include that in main...but
+    3. Potential blockers BEFORE RESEARCH -> updating every 5 minutes (maybe include that in main...but
         how without hard restarting the app everytime?
         -> running user input for new URLs against Cryptonator API
         -> why would i need to have a CRUD Update? unless that can run directly a
