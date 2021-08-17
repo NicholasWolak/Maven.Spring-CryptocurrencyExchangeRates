@@ -106,4 +106,17 @@ public class Foo {
     public void setError(Error error) {
         this.error = error;
     }
+
+    @Override
+    public String toString() {
+        return "Crypto{" +
+                "base='" + base + '\n' +
+                ", target='" + target + '\n' +
+                ", price=" + price + '\n' +
+                ", volume=" + volume + '\n' +
+                ", timeStamp=" + timeStamp + '\n' +
+                ", success=" + success + '\n' +
+                ", error=" + error + ' ' +
+                '}';
+    }
 }

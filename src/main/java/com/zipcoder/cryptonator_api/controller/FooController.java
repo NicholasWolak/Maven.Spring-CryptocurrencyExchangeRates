@@ -49,6 +49,8 @@ public class FooController {
 
     // to fetch new crypto data
     //restTemp is always null?
+    // need to use -> https://www.cryptonator.com/api/currencies == as URL to search and parse info
+    // need to filter page to parse data (maybe???) (probably not)
     private Object goodFetch(RestTemplate restTemplate, String ticker, String target) {
         String uriString = "https://api.cryptonator.com/api/ticker/" +
                 ticker + "-" + target;
@@ -64,7 +66,7 @@ public class FooController {
     public ResponseEntity<Foo> findCrypto(
             @PathVariable String ticker,
             @PathVariable String target ) {
-        Object result = goodFetch(null, ticker, target);
+        Object result = goodFetch(rest, ticker, target);
         return new ResponseEntity<>(service.create((Foo) result), HttpStatus.CREATED);
     }
 
